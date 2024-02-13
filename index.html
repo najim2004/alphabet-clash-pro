@@ -5,18 +5,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alphabet Clash Pro</title>
+
+    <!-- Tailwind and DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- google fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .poppins {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .anton {
+            font-family: "Anton", sans-serif;
+        }
+    </style>
 </head>
 
-<body>
-    <header>
+<body class="poppins bg-[rgb(30,30,30)] h-[100vh]">
+    <main class="container mx-auto h-[100%] bg-[url(./images/background.png)] bg-no-repeat bg-center">
+        <!-- home screen -->
+        <section class="home space-y-9 flex flex-col items-center justify-center h-full">
+            <h1 class="anton text-[rgb(255,255,255)] text-8xl">ALPHABET CLASH</h1>
+            <p class="text-[rgb(255,255,255)] text-xl font-medium">Unleash Your Keyboard Kung Fu : Press “Enter”
+                to Play</p>
+            <button class="btn bg-[rgb(255,255,255)] text-black text-2xl font-semibold">Play Now</button>
+        </section>
 
-    </header>
-    <main>
+        <!-- playground start -->
+        <section class="play-ground hidden flex flex-col items-center h-full justify-center">
+            <div class="space-y-16">
+                <!-- screen start -->
+                <div
+                    class="relative artboard artboard-horizontal phone-6 border-[15px] border-[rgb(47,47,50)] bg-[rgba(255,255,255,0.7)] mx-auto rounded-2xl flex justify-center items-center">
+                    <div class="bg-[rgb(47,47,50)] rounded-b-[12px] h-[30px] px-[20px] absolute  top-0">
+                        <p class="text-[rgb(255,255,255)] font-medium">Don't watch keyboard while playing...</p>
+                    </div>
+                    <h1 id="" class="text-[100px] font-semibold">Y</h1>
+                </div>
+                <!-- screen end -->
 
+                <!-- Keyboard start -->
+                <div class="kbd-container space-y-3">
+                    <div class="flex justify-center gap-3 my-1 w-full">
+                        <kbd class="kbd w-[50px] h-[50px]">q</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">w</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">e</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">r</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">t</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">y</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">u</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">i</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">o</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">p</kbd>
+                    </div>
+                    <div class="flex justify-center gap-3 my-1 w-full">
+                        <kbd class="kbd w-[50px] h-[50px]">a</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">s</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">d</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">f</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">g</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">h</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">j</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">k</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">l</kbd>
+                    </div>
+                    <div class="flex justify-center gap-3 my-1 w-full">
+                        <kbd class="kbd w-[50px] h-[50px]">z</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">x</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">c</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">v</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">b</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">n</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">m</kbd>
+                        <kbd class="kbd w-[50px] h-[50px]">/</kbd>
+                    </div>
+                </div>
+                <!-- Keyboard end -->
+
+                <!-- life score start -->
+                <div class="flex justify-between">
+                    <button
+                        class="text-[rgb(255,255,255)] btn bg-[rgb(137,65,137)] border-none rounded-[30px] px-7 py-3">
+                        Life
+                        <img src="./images/love.svg" alt="">
+                        <span>1</span>
+                    </button>
+                    <button class="text-[rgb(255,255,255)] btn bg-[rgb(54,4,144)] border-none rounded-[30px] px-7 py-3">
+                        Score
+                        <img src="./images/dollar.svg" alt="">
+                        <span>1</span>
+                    </button>
+                </div>
+                <!-- life score end -->
+            </div>
+        </section>
+
+        <!-- playground end -->
+        <section class="hidden score flex flex-col items-center justify-center h-full">
+            <div class="w-[400px] h-[280px] justify-center rounded-[16px] border-[1px] border-[rgba(255,255,255,0.2)] space-y-[30px] flex flex-col items-center bg-[rgba(255,255,255,0.2)]">
+                <h1 class="text-6xl text-white">
+                    <span class="font-extrabold">Score:</span>
+                    <span>14</span>
+                </h1>
+                <button class="btn px-[20px] h-[60px] text-2xl font-semibold">Play Again</button>
+                <p class="text-white text-2xl font-medium">Practice will make you Pro</p>
+            </div>
+        </section>
     </main>
-    <footer>
-
-    </footer>
 </body>
 
 </html>
